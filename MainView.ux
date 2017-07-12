@@ -1,9 +1,75 @@
 <App>
+    <JavaScript>
+    // var Observable = require("FuseJS/Observable");
+    // var GeoLocation = require("FuseJS/GeoLocation");
+    // // Immediate
+    // var immediateLocation = JSON.stringify(GeoLocation.location);
+
+    // // Timeout
+    // var timeoutLocation = Observable("");
+    // var timeoutMs = 5000;
+    // GeoLocation.getLocation(timeoutMs).then(function(location) {
+    //     timeoutLocation.value = JSON.stringify(location);
+    //     console.log('tick');
+    // }).catch(function(fail) {
+    //     console.log("getLocation fail " + fail);
+    // });
+
+    // // Continuous
+    // var continuousLocation = GeoLocation.observe("changed").map(JSON.stringify);
+
+    // GeoLocation.on("error", function(fail) {
+    //     console.log("GeoLocation error " + fail);
+    // });
+
+    // function startContinuousListener() {
+    //     var intervalMs = 1000;
+    //     var desiredAccuracyInMeters = 10;
+    //     GeoLocation.startListening(intervalMs, desiredAccuracyInMeters);
+    // }
+
+    // function stopContinuousListener() {
+    //     GeoLocation.stopListening();
+    // }
+
+    // module.exports = {
+    //     immediateLocation: immediateLocation,
+    //     timeoutLocation: timeoutLocation,
+    //     continuousLocation: continuousLocation,
+    //     startContinuousListener: startContinuousListener,
+    //     stopContinuousListener: stopContinuousListener
+    // }
+    function log(obj, mapEventArgs) {
+        console.log(JSON.stringify(obj));
+        console.log(JSON.stringify(mapEventArgs));
+    }
+    module.exports = {
+        log: log
+    }
+    </JavaScript>
     <ClientPanel>
-        <NativeViewHost>
-            <MapView Latitude="59.911567" Longitude="10.741030" Zoom="10">
-                <MapMarker Latitude="59.911567" Longitude="10.741030" Label="Fuse HQ"/>
-            </MapView>
-        </NativeViewHost>
+        <!-- <StackPanel>
+            <Text>Immediate:</Text>
+            <Text Value="{immediateLocation}" />
+
+            <Text>Timeout:</Text>
+            <Text Value="{timeoutLocation}" />
+
+            <Text>Continuous:</Text>
+            <Text Value="{continuousLocation}" />
+
+            <Button Text="Start continuous listener" Clicked="{startContinuousListener}" Margin="10" />
+            <Button Text="Stop continuous listener" Clicked="{stopContinuousListener}" Margin="10" />
+            <NativeViewHost Background="#000" Height="50">
+                <MapView Latitude="59.911567" Longitude="10.741030" Zoom="10">
+                    <MapMarker Latitude="59.911567" Longitude="10.741030" Label="Fuse HQ"/>
+                </MapView>
+            </NativeViewHost>
+        </StackPanel> -->
+        <NativeViewHost Background="#000" >
+                <MapView Latitude="42.8227562" Longitude="74.6230976" Zoom="10" ShowMyLocationButton="true" LocationTapped="{log}" ShowMyLocation="true">
+                    <MapMarker Latitude="42.8227562" Longitude="74.6230976" Label="Fuse HQ"/>
+                </MapView>
+            </NativeViewHost>
     </ClientPanel>
 </App>

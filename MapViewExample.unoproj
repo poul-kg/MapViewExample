@@ -1,11 +1,27 @@
 {
-  "RootNamespace":"",
-  "Packages": [
-    "Fuse.Maps",
-    "Fuse",
-    "FuseJS"
-  ],
-  "Includes": [
-    "*"
-  ]
+    "RootNamespace":"",
+    "Packages": [
+
+        "Fuse.Maps",
+        "Fuse",
+        "FuseJS"
+    ],
+    "Includes": [
+        "*"
+    ],
+    "iOS": {
+        "BundleIdentifier": "ai.life.chat",
+        "PreviewBundleIdentifier": "ai.life.chat.preview2",
+        "BundleName": "MapViewExample",
+        "BundleVersion": "0.0.1",
+        "PList": {
+            "MKDirectionsApplicationSupportedModes": [
+                "MKDirectionsModeCar",
+                "MKDirectionsModeBus"
+            ],
+            "UIRequiredDeviceCapabilities": [
+                "location-services"
+            ]
+        }
+    }
 }
