@@ -1,7 +1,6 @@
 {
     "RootNamespace":"",
     "Packages": [
-
         "Fuse.Maps",
         "Fuse",
         "FuseJS"
@@ -10,8 +9,8 @@
         "*"
     ],
     "iOS": {
-        "BundleIdentifier": "ai.life.chat",
-        "PreviewBundleIdentifier": "ai.life.chat.preview2",
+        "BundleIdentifier": "com.map.example",
+        "PreviewBundleIdentifier": "com.map.example.preview",
         "BundleName": "MapViewExample",
         "BundleVersion": "0.0.1",
         "PList": {
